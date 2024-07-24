@@ -1,0 +1,135 @@
+@import "../../sass/abstracts/variable";
+@import "../../sass/abstracts/mixins";
+
+.header {
+  @include flex-center(3.2rem);
+  padding: 0.2rem 1.2rem;
+  background-color: transparent;
+}
+
+.search {
+  flex: 0 0 35%;
+  @include flex-center(0);
+  font-size: 1.4rem;
+
+  &__input {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    width: 100%;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: $border-radius-sm;
+    margin-right: -3.2rem;
+    padding-right: 3.5rem;
+    background-color: #e9ecef;
+    transition: $transition;
+
+    &:focus {
+      outline: none;
+      background-color: #f0eeee;
+    }
+
+    &::placeholder {
+      color: #bbb;
+    }
+  }
+
+  &__icon-box {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__icon {
+    font-size: 2rem;
+    color: #aaa;
+  }
+}
+
+.nav {
+  &__links {
+    list-style: none;
+    @include flex-center(2.4rem);
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $color-grey-dark-1;
+  }
+}
+
+.active {
+  color: $color-primary;
+}
+
+.user {
+  margin-left: auto;
+  @include flex-center(1.6rem);
+
+  &__box {
+    @include flex-center(0.8rem);
+    align-self: stretch;
+
+    position: relative;
+    cursor: pointer;
+    padding: 0.2rem 0.8rem;
+    transition: $transition;
+    border-radius: $border-radius-sm;
+
+    &:hover {
+      box-shadow: inset 0 0 0 2px $color-white;
+    }
+  }
+
+  &__name {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  &__icon {
+    font-size: 2.4rem;
+  }
+
+  &__logout-box {
+    position: absolute;
+    top: 130%;
+    right: 0;
+    width: 100%;
+  }
+
+  &__logout {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem;
+    color: $color-grey-dark-1;
+    background-color: $color-white;
+  }
+
+  &__theme {
+    cursor: pointer;
+    font-weight: 500;
+    color: $color-grey-dark-1;
+  }
+
+  &__btn {
+    font-family: inherit;
+    font-size: 1.8rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem 1.2rem;
+    color: $color-grey-dark-1;
+    border-radius: $border-radius-sm;
+    background-color: $color-white;
+  }
+}
