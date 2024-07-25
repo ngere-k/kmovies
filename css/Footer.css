@@ -1,1 +1,86 @@
-/*# sourceMappingURL=Footer.css.map */
+.footer-article {
+  padding: 6.4rem 0 3.2rem 0;
+  background-color: #e9ecef;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.4rem;
+}
+.footer__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  row-gap: 3.2rem;
+  -moz-column-gap: 1.6rem;
+       column-gap: 1.6rem;
+}
+.footer__logo-box {
+  width: auto;
+}
+.footer__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  justify-self: center;
+  grid-column: 2/3;
+  grid-row: 1/span 2;
+}
+.footer__icon {
+  color: #555;
+  font-size: 3rem;
+  transition: all 0.3s;
+}
+.footer__icon:hover {
+  color: #2c0808;
+}
+.footer__terms {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  font-size: 1.6rem;
+  color: #333;
+}
+.footer__term, .footer__privacy {
+  cursor: pointer;
+}
+.footer__nav:link, .footer__nav:visited {
+  padding: 0.8rem;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s;
+}
+.footer__rule {
+  border-bottom: 1px solid #ddd;
+  background-color: transparent;
+}
+.footer__rights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  font-size: 1.2rem;
+}
+.footer__tmdb-box {
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.footer__tmdb-logo {
+  height: 3rem;
+}
+.footer__built-by {
+  justify-self: end;
+}
+.footer__dev:link, .footer__dev:visited {
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+.footer__dev:link:hover, .footer__dev:link:active, .footer__dev:visited:hover, .footer__dev:visited:active {
+  color: inherit;
+  text-decoration: underline;
+}/*# sourceMappingURL=Footer.css.map */
