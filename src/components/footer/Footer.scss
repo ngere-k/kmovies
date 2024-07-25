@@ -1,0 +1,106 @@
+@import "../../sass/abstracts/variable";
+@import "../../sass/abstracts/mixins";
+
+.footer-article {
+  padding: 6.4rem 0 3.2rem 0;
+  background-color: $color-grey-light-1;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.4rem;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    row-gap: 3.2rem;
+    column-gap: 1.6rem;
+  }
+
+  &__logo-box {
+    width: auto;
+  }
+
+  &__links {
+    list-style: none;
+    @include flex-center(2.4rem);
+    justify-self: center;
+
+    grid-column: 2/ 3;
+    grid-row: 1 / span 2;
+  }
+
+  &__icon {
+    color: $color-grey-dark-2;
+    font-size: 3rem;
+    transition: $transition;
+
+    &:hover {
+      color: #2c0808;
+    }
+  }
+
+  &__terms {
+    @include flex-center(2.4rem);
+    font-size: 1.6rem;
+    color: $color-grey-dark-1;
+  }
+
+  &__term,
+  &__privacy {
+    cursor: pointer;
+  }
+
+  &__nav:link,
+  &__nav:visited {
+    padding: 0.8rem;
+    text-decoration: none;
+    color: $color-grey-dark-1;
+    transition: $transition;
+  }
+
+  &__rule {
+    border-bottom: 1px solid #ddd;
+    background-color: transparent;
+  }
+
+  &__rights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+
+    font-size: 1.2rem;
+  }
+
+  &__tmdb-box {
+    justify-self: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  &__tmdb-logo {
+    height: 3rem;
+  }
+
+  &__built-by {
+    justify-self: end;
+  }
+
+  &__dev:link,
+  &__dev:visited {
+    color: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+}
