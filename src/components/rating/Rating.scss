@@ -1,0 +1,10 @@
+@import "../../sass/abstracts/mixins";
+@import "../../sass/abstracts/variable";
+
+.rating {
+  @include flex-center(0.8rem);
+
+  &__icon {
+    color: $color-secondary;
+  }
+}
