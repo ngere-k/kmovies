@@ -1,0 +1,8 @@
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.rating__icon {
+  color: #ebb400;
+}/*# sourceMappingURL=Rating.css.map */

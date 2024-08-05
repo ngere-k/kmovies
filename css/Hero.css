@@ -1,0 +1,45 @@
+.swiper-wrapper {
+  height: 90vh;
+  position: relative;
+}
+.swiper-button-next, .swiper-button-prev {
+  color: #fff;
+}
+.swiper-pagination-bullet-active {
+  background-color: #fff;
+}
+.swiper__container {
+  max-width: 100rem;
+  position: absolute;
+  top: 50%;
+  left: 11%;
+  transform: translate(0, -50%);
+}
+.swiper__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  color: #fff;
+  margin-bottom: 3.2rem;
+}
+.swiper__rating {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 1.8rem;
+}
+.swiper__iota {
+  color: #aaa;
+}
+.swiper__overview {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+.swiper__genre {
+  color: #ebb400;
+  font-size: 1.6rem;
+}
+.swiper__link {
+  display: inline-block;
+  text-decoration: none;
+}/*# sourceMappingURL=Hero.css.map */
