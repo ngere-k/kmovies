@@ -6,3 +6,15 @@ body {
   line-height: 1.1;
   color: $color-grey-dark-2;
 }
+
+.heading-primary {
+  font-size: 4.4rem;
+  font-weight: 700;
+}
+
+.heading-secondary {
+  font-size: 3rem;
+  font-weight: 700;
+  color: $color-grey-dark-1;
+  margin-bottom: 2.4rem;
+}
