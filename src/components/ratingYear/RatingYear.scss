@@ -1,0 +1,10 @@
+@import "../../sass/abstracts/mixins";
+
+.ry {
+  @include flex-center(1.2rem);
+  font-size: 1.8rem;
+
+  &__iota {
+    color: #aaa;
+  }
+}
