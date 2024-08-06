@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PiMagnifyingGlassBold, PiSun, PiMoonFill } from "react-icons/pi";
+import { PiMagnifyingGlassBold, PiSunFill, PiMoonFill } from "react-icons/pi";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "../logo/Logo";
@@ -74,7 +74,7 @@ const Navbar = () => {
 
         <div className="user__theme">
           <span className="user__light">
-            <PiSun className="user__icon" />
+            <PiSunFill className="user__icon" />
           </span>
           <span className="user__dark">
             <PiMoonFill className="user__icon" />
