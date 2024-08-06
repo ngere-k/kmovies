@@ -1,10 +1,11 @@
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useSelector } from "react-redux";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
-import Rating from "../rating/Rating";
+import RatingYear from "../ratingYear/RatingYear";
 import { PiPlayFill } from "react-icons/pi";
-import { getYear } from "../../utils/getYear";
 import { Link } from "react-router-dom";
+import customAxios from "../../utils/axios";
 
 // styles
 import "swiper/swiper-bundle.css";
@@ -13,6 +14,25 @@ import "./Hero.scss";
 const Hero = () => {
   const { newMovies } = useSelector((store) => store.newMovies);
   const slides = newMovies?.slice(0, 6);
+  const [genres, setGenres] = useState(null);
+
+  const getGenres = (genreIds) => {
+    const getGenreNameById = (genreId) => {
+      const g = genres?.find((g) => g.id === genreId);
+      return g ? g.name : "Unknown Genre";
+    };
+
+    return genreIds.map((id) => getGenreNameById(id)).join(" / ");
+  };
+
+  useEffect(() => {
+    const getGenreMovieList = async () => {
+      const res = await customAxios("/genre/movie/list");
+      setGenres(res.data.genres);
+    };
+
+    getGenreMovieList();
+  }, []);
 
   return (
     <Swiper
@@ -23,7 +43,7 @@ const Hero = () => {
       effect={"fade"}
       pagination={{ clickable: true }}
       autoplay={{
-        delay: 5000,
+        delay: 5500,
         disableOnInteraction: false,
       }}
     >
@@ -35,6 +55,7 @@ const Hero = () => {
           release_date,
           title,
           overview,
+          genre_ids,
         } = slide;
 
         const styles = {
@@ -47,17 +68,13 @@ const Hero = () => {
           <SwiperSlide key={id} style={styles}>
             <div className="swiper__container">
               <div className="swiper__content">
-                <div className="swiper__rating">
-                  <Rating rating={vote_average} />
-                  <span className="swiper__iota">&Iota;</span>
-                  <div className="swiper__year">{getYear(release_date)}</div>
-                </div>
+                <RatingYear rating={vote_average} date={release_date} />
                 <h1 className="heading-primary">{title}</h1>
                 <p className="swiper__overview">{overview}</p>
-                <div className="swiper__genre">Comedy / Action / Adventure</div>
+                <div className="swiper__genre">{getGenres(genre_ids)}</div>
               </div>
 
-              <Link to={`/movies/${id}`} className="swiper__link">
+              <Link to={`/movie-detail/${id}`} className="swiper__link">
                 <button className="btn">
                   <PiPlayFill className="swiper__icon" />
                   Watch Trailer
