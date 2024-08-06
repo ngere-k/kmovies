@@ -27,8 +27,8 @@ function App() {
         <Route path="series" element={<Series />} />
         <Route path="contact" element={<Contact />} />
         <Route path="search" element={<Search />} />
-        <Route path="movies/:id" element={<MovieDetail />} />
-        <Route path="series/:id" element={<SeriesDetail />} />
+        <Route path="/movie-detail/:id" element={<MovieDetail />} />
+        <Route path="series-detail/:id" element={<SeriesDetail />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
