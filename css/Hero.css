@@ -22,15 +22,6 @@
   color: #fff;
   margin-bottom: 3.2rem;
 }
-.swiper__rating {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  font-size: 1.8rem;
-}
-.swiper__iota {
-  color: #aaa;
-}
 .swiper__overview {
   font-size: 1.6rem;
   line-height: 1.6;

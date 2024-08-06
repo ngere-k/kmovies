@@ -1,0 +1,9 @@
+.ry {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 1.8rem;
+}
+.ry__iota {
+  color: #aaa;
+}/*# sourceMappingURL=RatingYear.css.map */
