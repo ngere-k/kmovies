@@ -9,6 +9,10 @@
   background-color: $color-primary;
   transition: $transition;
 
+  &:hover {
+    background-color: $color-primary-dark-1;
+  }
+
   &--round {
     border-radius: 200px;
   }
