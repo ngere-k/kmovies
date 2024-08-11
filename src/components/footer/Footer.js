@@ -48,7 +48,7 @@ const Footer = () => {
 
         <div className="footer__rights">
           <p className="footer__reserved">
-            &copy; {new Date().getFullYear()} Kmovies. All right reserved.
+            &copy; {new Date().getFullYear()} Kmovies. All rights reserved.
           </p>
 
           <div className="footer__tmdb-box">
