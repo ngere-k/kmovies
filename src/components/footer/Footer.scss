@@ -76,10 +76,7 @@
 
   &__tmdb-box {
     justify-self: center;
-
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
+    @include flex-column(0.8rem);
   }
 
   &__tmdb-logo {
