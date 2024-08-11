@@ -74,7 +74,7 @@ const Hero = () => {
                 <div className="swiper__genre">{getGenres(genre_ids)}</div>
               </div>
 
-              <Link to={`/movie-details/${id}`} className="swiper__link">
+              <Link to={`/movie-detail/${id}`} className="swiper__link">
                 <button className="btn btn--round">
                   <PiPlayFill className="swiper__icon" />
                   Watch Trailer
