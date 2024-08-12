@@ -1,0 +1,30 @@
+.input__box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.input__name {
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+.input__field {
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  font-size: 1.8rem;
+  padding: 1.2rem 1.6rem;
+  transition: all 0.3s;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+.input__field::-moz-placeholder {
+  color: #bbb;
+}
+.input__field::placeholder {
+  color: #bbb;
+}
+.input__field:focus {
+  outline: none;
+  background-color: #eee;
+  border: 1px solid #dc2626;
+}/*# sourceMappingURL=InputRow.css.map */
