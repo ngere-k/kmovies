@@ -3,19 +3,36 @@ import { PiMagnifyingGlassBold, PiSunFill, PiMoonFill } from "react-icons/pi";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "../logo/Logo";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  toggleLogoutModal,
+  openLoginModal,
+  toggleMode,
+} from "../../features/modal/modalSlice";
+import { signOutUser } from "../../features/user/userSlice";
 
 // styles
 import "./Navbar.scss";
 
 const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const { user } = useSelector((store) => store.user);
+  const { isLogoutOpen, mode } = useSelector((store) => store.modal);
+
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    navigate("/search");
+    const formattedQuery = searchTerm.replaceAll(" ", "+");
+    navigate(`/search?q=${formattedQuery}`);
     setSearchTerm("");
+  };
+
+  const handleLogout = () => {
+    dispatch(signOutUser());
+    dispatch(toggleLogoutModal());
   };
 
   return (
@@ -27,7 +44,7 @@ const Navbar = () => {
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Search for movies, tv series and people"
+          placeholder="Search for movies, tv series and people..."
           className="search__input"
         />
         <button className="search__icon-box">
@@ -62,26 +79,50 @@ const Navbar = () => {
 
       <div className="user">
         <div className="user__box">
-          <span className="user__name">my-username-is-long</span>
-          <span className="user__icon">
-            <MdKeyboardArrowDown />
-          </span>
+          {user && (
+            <div
+              className="user__name-box"
+              onClick={() => dispatch(toggleLogoutModal())}
+            >
+              <span className="user__name">{user?.displayName}</span>
+              <span className="user__icon">
+                <MdKeyboardArrowDown />
+              </span>
+            </div>
+          )}
 
-          <div className="user__logout-box">
-            <button className="user__logout">Logout</button>
-          </div>
+          {isLogoutOpen && (
+            <div className="user__logout-box">
+              <button className="user__logout" onClick={handleLogout}>
+                Logout
+              </button>
+            </div>
+          )}
         </div>
 
         <div className="user__theme">
-          <span className="user__light">
-            <PiSunFill className="user__icon" />
-          </span>
-          <span className="user__dark">
-            <PiMoonFill className="user__icon" />
-          </span>
+          {mode === "light" ? (
+            <span className="user__dark" onClick={() => dispatch(toggleMode())}>
+              <PiMoonFill className="user__icon" />
+            </span>
+          ) : (
+            <span
+              className="user__light"
+              onClick={() => dispatch(toggleMode())}
+            >
+              <PiSunFill className="user__icon" />
+            </span>
+          )}
         </div>
 
-        <button className="user__btn">Login</button>
+        {!user && (
+          <button
+            className="user__btn"
+            onClick={() => dispatch(openLoginModal())}
+          >
+            Login
+          </button>
+        )}
       </div>
     </header>
   );
