@@ -6,6 +6,7 @@ import RatingYear from "../ratingYear/RatingYear";
 import { PiPlayFill } from "react-icons/pi";
 import { Link } from "react-router-dom";
 import customAxios from "../../utils/axios";
+import { imageUrl } from "../../utils/imageUrl";
 
 // styles
 import "swiper/swiper-bundle.css";
@@ -59,7 +60,7 @@ const Hero = () => {
         } = slide;
 
         const styles = {
-          backgroundImage: `linear-gradient(to right, rgba(46, 46, 46, 0.8), rgba(112, 112, 112, 0.2)),url(https://image.tmdb.org/t/p/original${backdrop_path})`,
+          backgroundImage: `linear-gradient(to right, rgba(46, 46, 46, 0.8), rgba(112, 112, 112, 0.2)),url(${imageUrl}${backdrop_path})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         };
