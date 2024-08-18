@@ -1,0 +1,6 @@
+@import "../../sass/abstracts/mixins";
+
+.main {
+  @include flex-column(4.8rem);
+  padding: 6.4rem 0;
+}
