@@ -4,6 +4,7 @@ import { fetchNewMovies } from "../../features/movies/newMoviesSlice";
 
 // components
 import Hero from "../../components/hero/Hero";
+import NewMovies from "../../components/newMovies/NewMovies";
 
 // styles
 import "./Home.scss";
@@ -16,9 +17,12 @@ const Home = () => {
   }, []);
 
   return (
-    <main>
+    <>
       <Hero />
-    </main>
+      <div className="main">
+        <NewMovies />
+      </div>
+    </>
   );
 };
 
