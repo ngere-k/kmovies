@@ -1,0 +1,30 @@
+@import "../../sass/abstracts/mixins";
+
+.card {
+  &__link {
+    display: block;
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    @include flex-column(0.8rem);
+    padding-top: 1.6rem;
+  }
+
+  &__text-link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+}
