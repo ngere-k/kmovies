@@ -2,7 +2,14 @@
 
 .ry {
   @include flex-center(1.2rem);
-  font-size: 1.8rem;
+
+  &--sm {
+    font-size: 1.4rem;
+  }
+
+  &--md {
+    font-size: 1.8rem;
+  }
 
   &__iota {
     color: #aaa;
