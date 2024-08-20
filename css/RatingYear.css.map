@@ -1,1 +1,1 @@
-{"version":3,"sources":["../src/components/ratingYear/RatingYear.scss","../src/sass/abstracts/_mixins.scss","RatingYear.css"],"names":[],"mappings":"AAEA;ECDE,aAAA;EACA,mBAAA;EACA,WAAA;EDCA,iBAAA;AECF;AFCE;EACE,WAAA;AECJ","file":"RatingYear.css"}
+{"version":3,"sources":["../src/components/ratingYear/RatingYear.scss","../src/sass/abstracts/_mixins.scss","RatingYear.css"],"names":[],"mappings":"AAEA;ECDE,aAAA;EACA,mBAAA;EACA,WAAA;ACCF;AFCE;EACE,iBAAA;AECJ;AFEE;EACE,iBAAA;AEAJ;AFGE;EACE,WAAA;AEDJ","file":"RatingYear.css"}

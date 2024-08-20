@@ -1,0 +1,22 @@
+.card__link {
+  display: block;
+}
+.card__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding-top: 1.6rem;
+}
+.card__text-link:link, .card__text-link:visited {
+  text-decoration: none;
+}
+.card__text-link:hover, .card__text-link:active {
+  text-decoration: underline;
+}/*# sourceMappingURL=Card.css.map */
