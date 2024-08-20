@@ -5,6 +5,11 @@ import { fetchNewMovies } from "../../features/movies/newMoviesSlice";
 // components
 import Hero from "../../components/hero/Hero";
 import NewMovies from "../../components/newMovies/NewMovies";
+import TrendingMovies from "../../components/trendingMovies/TrendingMovies";
+import TopRatedMovies from "../../components/topRatedMovies/TopRatedMovies";
+import LatestSeries from "../../components/latestSeries/LatestSeries";
+import TrendingSeries from "../../components/trendingSeries/TrendingSeries";
+import TopRatedSeries from "../../components/topRatedSeries/TopRatedSeries";
 
 // styles
 import "./Home.scss";
@@ -19,9 +24,14 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <div className="main">
+      <main className="main">
         <NewMovies />
-      </div>
+        <TrendingMovies />
+        <TopRatedMovies />
+        <LatestSeries />
+        <TrendingSeries />
+        <TopRatedSeries />
+      </main>
     </>
   );
 };
