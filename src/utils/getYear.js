@@ -1,1 +1,1 @@
-export const getYear = (str) => str.split("-")[0];
+export const getYear = (str) => str?.split("-")[0] ?? "N/A";
