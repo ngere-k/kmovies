@@ -34,7 +34,7 @@ const HomeMovies = ({ url, heading, path }) => {
     <section>
       <div className="container">
         <h2 className="heading-secondary">{heading}</h2>
-        <div className="movies-grid">
+        <div className="grid-col-4">
           {moviesSlice.map((movie) => {
             return <Card key={movie.id} {...movie} path={path} />;
           })}
