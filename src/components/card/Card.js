@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { imageUrl } from "../../utils/imageUrl";
 import RatingYear from "../ratingYear/RatingYear";
+import defaultPoster from "../../assets/No_Image_Available.jpg";
 
 // styles
 import "./Card.scss";
@@ -24,7 +25,7 @@ const Card = ({
     <div className="card">
       <Link to={`${path}/${id}`} className="card__link">
         <img
-          src={`${imageUrl}${poster_path}`}
+          src={poster_path ? `${imageUrl}${poster_path}` : defaultPoster}
           className="card__img"
           alt={title}
         />
