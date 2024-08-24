@@ -1,0 +1,27 @@
+@import "../../sass/abstracts/variable";
+
+.search-article {
+  margin-top: 50px;
+  padding: $section-padding-1;
+}
+
+.query {
+  &__heading {
+    text-transform: none;
+  }
+}
+
+.empty {
+  font-size: 2rem;
+  text-align: center;
+  height: calc(100vh - 50px);
+  padding: 4.8rem 0;
+  margin-top: 50px;
+
+  &__heading {
+    font-weight: 700;
+    color: $color-grey-dark-1;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.2rem;
+  }
+}
