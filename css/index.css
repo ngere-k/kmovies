@@ -70,6 +70,14 @@ body {
   max-width: 120rem;
 }
 
+.grid-col-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -moz-column-gap: 2.4rem;
+       column-gap: 2.4rem;
+  row-gap: 3.2rem;
+}
+
 .section {
   padding: 6rem 0;
 }

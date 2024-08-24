@@ -1,7 +1,1 @@
-.movies-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  -moz-column-gap: 2.4rem;
-       column-gap: 2.4rem;
-  row-gap: 3.2rem;
-}/*# sourceMappingURL=HomeMovies.css.map */
+/*# sourceMappingURL=HomeMovies.css.map */
