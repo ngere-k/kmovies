@@ -10,6 +10,7 @@ import {
   toggleMode,
 } from "../../features/modal/modalSlice";
 import { signOutUser } from "../../features/user/userSlice";
+import { changePage } from "../../features/search/searchSlice";
 
 // styles
 import "./Navbar.scss";
@@ -27,6 +28,7 @@ const Navbar = () => {
 
     const formattedQuery = searchTerm.replaceAll(" ", "+");
     navigate(`/search?q=${formattedQuery}`);
+    dispatch(changePage(0)); // reset page
     setSearchTerm("");
   };
 
