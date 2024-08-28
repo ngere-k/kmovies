@@ -1,0 +1,45 @@
+@import "../../sass/abstracts/variable";
+@import "../../sass/abstracts/mixins";
+
+.pagination {
+  @include flex-center(0.8rem);
+  list-style: none;
+  padding: 1.6rem 3.2rem;
+  background-color: $color-grey-light-3;
+}
+
+.page-link,
+.break-link {
+  display: block;
+  color: $color-grey-dark-1;
+  font-weight: 500;
+  font-size: 1.6rem;
+  padding: 0.8rem 1.6rem;
+}
+
+.page-link {
+  cursor: pointer;
+  transition: $transition;
+}
+
+.page-link:hover,
+.active {
+  color: $color-white;
+  background-color: $color-primary;
+  border-radius: $border-radius-sm;
+}
+
+.page-prev.page-link,
+.page-next.page-link {
+  color: $color-primary;
+  background-color: transparent;
+}
+
+.prev-label,
+.next-label {
+  @include flex-center(0.4rem);
+}
+
+.link-icon {
+  font-size: 2rem;
+}
