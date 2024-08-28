@@ -46,7 +46,7 @@ const Navbar = () => {
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Search for movies, tv series and people..."
+          placeholder="Search for movies and tv series..."
           className="search__input"
         />
         <button className="search__icon-box">
