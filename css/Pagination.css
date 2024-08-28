@@ -1,0 +1,46 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  list-style: none;
+  padding: 1.6rem 3.2rem;
+  background-color: #f7f7f7;
+}
+
+.page-link,
+.break-link {
+  display: block;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.6rem;
+  padding: 0.8rem 1.6rem;
+}
+
+.page-link {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.page-link:hover,
+.active {
+  color: #fff;
+  background-color: #dc2626;
+  border-radius: 5px;
+}
+
+.page-prev.page-link,
+.page-next.page-link {
+  color: #dc2626;
+  background-color: transparent;
+}
+
+.prev-label,
+.next-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.link-icon {
+  font-size: 2rem;
+}/*# sourceMappingURL=Pagination.css.map */

@@ -3,8 +3,13 @@
   padding: 6.4rem 0;
 }
 
-.query__heading {
-  text-transform: none;
+.query {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+}
+.query__pagination {
+  align-self: flex-end;
 }
 
 .empty {
