@@ -32,6 +32,13 @@
 .page-next.page-link {
   color: #dc2626;
   background-color: transparent;
+  transition: all 0.3s;
+}
+
+.page-prev.page-link:hover,
+.page-next.page-link:hover {
+  color: #fff;
+  background-color: #dc2626;
 }
 
 .prev-label,
