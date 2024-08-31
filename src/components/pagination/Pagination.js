@@ -5,6 +5,8 @@ import { RiArrowLeftDoubleFill, RiArrowRightDoubleFill } from "react-icons/ri";
 import "./Pagination.scss";
 
 const Pagination = ({ handlePageClick, pageCount, page }) => {
+  if (pageCount <= 1) return;
+
   return (
     <ReactPaginate
       breakLabel="..."
