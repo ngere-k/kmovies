@@ -33,6 +33,13 @@
 .page-next.page-link {
   color: $color-primary;
   background-color: transparent;
+  transition: $transition;
+}
+
+.page-prev.page-link:hover,
+.page-next.page-link:hover {
+  color: $color-white;
+  background-color: $color-primary;
 }
 
 .prev-label,
