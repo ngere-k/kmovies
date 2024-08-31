@@ -1,1 +1,1 @@
-export const getYear = (str) => str?.split("-")[0] ?? "N/A";
+export const getYear = (dateStr) => new Date(dateStr).getFullYear() || "N/A";
