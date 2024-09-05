@@ -22,7 +22,7 @@
 }
 
 .page-link:hover,
-.active {
+.page-active {
   color: #fff;
   background-color: #dc2626;
   border-radius: 5px;
