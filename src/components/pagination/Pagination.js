@@ -22,7 +22,7 @@ const Pagination = ({ handlePageClick, pageCount, page }) => {
       pageLinkClassName={"page-link"}
       previousLinkClassName={"page-prev page-link"}
       nextLinkClassName={"page-next page-link"}
-      activeLinkClassName={"active"}
+      activeLinkClassName={"page-active"}
       previousLabel={
         <div className="prev-label">
           <RiArrowLeftDoubleFill className="link-icon" />
