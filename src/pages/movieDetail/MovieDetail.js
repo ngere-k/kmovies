@@ -1,7 +1,15 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import customAxios from "../../utils/axios";
-import { imageUrl } from "../../utils/imageUrl";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchCredits,
+  fetchKeywords,
+} from "../../features/details/detailsSlice";
+
+// components
+import Loading from "../../components/loading/Loading";
+import DetailsHeader from "../../components/detailsHeader/DetailsHeader";
 
 // styles
 import "./MovieDetail.scss";
@@ -10,7 +18,35 @@ const MovieDetail = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const { backdrop_path, poster_path, title } = movie;
+  const { credits, keywords } = useSelector((store) => store.details);
+  const dispatch = useDispatch();
+
+  const findDirectorObj = credits.crew?.find((item) => item.job === "Director");
+
+  const {
+    backdrop_path,
+    poster_path,
+    title,
+    vote_average,
+    release_date,
+    runtime,
+    genres,
+    overview,
+  } = movie;
+
+  const movieDetailsObj = {
+    backdrop: backdrop_path,
+    poster: poster_path,
+    title,
+    vote: vote_average,
+    release_date,
+    runtime,
+    genres,
+    overview,
+    director: findDirectorObj?.original_name,
+    credits,
+    keywords,
+  };
 
   const fetchMovie = async () => {
     setIsLoading(true);
@@ -25,35 +61,21 @@ const MovieDetail = () => {
 
   useEffect(() => {
     fetchMovie();
+    dispatch(fetchCredits({ type: "movie", id }));
+    dispatch(fetchKeywords({ type: "movie", id }));
   }, []);
 
-  const styles = {
-    backgroundImage: `url(${imageUrl}${backdrop_path})`,
-    backgroundSize: "cover",
-    backgroundPosition: "left calc((50vw - 170px) - 340px) top",
-    backgroundRepeat: "no-repeat",
-  };
+  if (isLoading) return <Loading />;
 
   return (
     <article className="movie-detail-article">
-      <header className="detail__header" style={styles}>
-        <div className="detail__wrapper">
-          <div className="detail__content container">
-            <div className="detail__img-box">
-              <img
-                src={`${imageUrl}${poster_path}`}
-                alt={title}
-                className="detail__img"
-              />
-            </div>
-            <div className="detail__text">Text here</div>
-          </div>
-        </div>
-      </header>
+      <DetailsHeader {...movieDetailsObj} />
 
-      <main>
+      {/* div for cast */}
+      <div>
         <h2>Movie Detail</h2>
-      </main>
+      </div>
+      {/* div for cast */}
     </article>
   );
 };
