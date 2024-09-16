@@ -24,7 +24,8 @@ export const fetchKeywords = createAsyncThunk(
   async ({ type, id }, { rejectWithValue }) => {
     try {
       const res = await customAxios.get(`/${type}/${id}/keywords`);
-      return res.data.keywords;
+      if (type === "movie") return res.data.keywords;
+      return res.data.results;
     } catch (error) {
       console.log(error);
       //   return rejectWithValue(error.message);
