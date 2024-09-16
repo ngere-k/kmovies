@@ -10,15 +10,16 @@ import Rating from "../../components/rating/Rating";
 import "./DetailsHeader.scss";
 
 const DetailsHeader = ({
-  backdrop_path,
-  poster_path,
+  backdrop,
+  poster,
   title,
-  vote_average,
+  vote,
   release_date,
   runtime,
   genres,
   overview,
   director,
+  creator,
   keywords,
   credits,
 }) => {
@@ -44,7 +45,7 @@ const DetailsHeader = ({
     .join(", ");
 
   const styles = {
-    backgroundImage: `url(${imageUrl}${backdrop_path})`,
+    backgroundImage: `url(${imageUrl}${backdrop})`,
     backgroundSize: "cover",
     backgroundPosition: "left calc((50vw - 17rem) - 34rem) top",
     backgroundRepeat: "no-repeat",
@@ -55,7 +56,7 @@ const DetailsHeader = ({
         <div className="detail__content container">
           <div className="detail__img-box">
             <img
-              src={`${imageUrl}${poster_path}`}
+              src={`${imageUrl}${poster}`}
               alt={title}
               className="detail__img"
             />
@@ -64,7 +65,7 @@ const DetailsHeader = ({
             <div className="detail__text">
               <h2 className="detail__heading">{title}</h2>
               <div className="detail__ratings">
-                <Rating rating={vote_average} />
+                <Rating rating={vote} />
                 <div className="detail__year">{getYear(release_date)}</div>
                 <div className="detail__time">{movieRuntime(runtime)}</div>
               </div>
@@ -76,9 +77,11 @@ const DetailsHeader = ({
               Watch Trailer
             </button>
             <ul className="detail__lists">
-              <li className="detail__title">Director:</li>
-              <li>{director}</li>
-              <li className="detail__title">Cast:</li>
+              <li className="detail__title">
+                {director ? "Director:" : "Creator:"}
+              </li>
+              <li>{director || creator}</li>
+              {getCastsList && <li className="detail__title">Cast:</li>}
               <li className="detail__cast">{getCastsList}</li>
               {!keywords.length < 1 && (
                 <li className="detail__title">Keywords:</li>
