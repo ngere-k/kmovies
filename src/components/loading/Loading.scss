@@ -1,9 +1,16 @@
 @import "../../sass/abstracts/variable";
+@import "../../sass/abstracts/mixins";
 
 @keyframes spinner {
   to {
     transform: rotate(360deg);
   }
+}
+
+.full-page-loading {
+  @include flex-obj-ctr;
+  margin-top: 5rem; // navbar height
+  height: calc(100vh - 5rem); // 100vh - 5rem(navbar height)
 }
 
 .loading {
