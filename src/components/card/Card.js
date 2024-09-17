@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { imageUrl } from "../../utils/imageUrl";
 import RatingYear from "../ratingYear/RatingYear";
-import defaultPoster from "../../assets/No_Image_Available.jpg";
+import defaultPoster from "../../assets/No_Image_Available.png";
 
 // styles
 import "./Card.scss";
