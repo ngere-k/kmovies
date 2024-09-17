@@ -35,7 +35,7 @@ const Search = () => {
   };
 
   if (isLoading) {
-    return <Loading />;
+    return <Loading fullPageLoading />;
   }
 
   if (movies.length < 1) {
