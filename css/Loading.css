@@ -3,6 +3,14 @@
     transform: rotate(360deg);
   }
 }
+.full-page-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  height: calc(100vh - 5rem);
+}
+
 .loading {
   width: 4.8rem;
   height: 4.8rem;
