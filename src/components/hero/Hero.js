@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useSelector } from "react-redux";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
-import RatingYear from "../ratingYear/RatingYear";
-import { PiPlayFill } from "react-icons/pi";
 import { Link } from "react-router-dom";
 import customAxios from "../../utils/axios";
 import { imageUrl } from "../../utils/imageUrl";
+
+// components
+import RatingYear from "../ratingYear/RatingYear";
+import WatchTrailerBtn from "../watchTrailerBtn/WatchTrailerBtn";
 
 // styles
 import "swiper/swiper-bundle.css";
@@ -76,10 +78,7 @@ const Hero = () => {
               </div>
 
               <Link to={`/movie/${id}`} className="swiper__link">
-                <button className="btn btn--round">
-                  <PiPlayFill className="swiper__icon" />
-                  Watch Trailer
-                </button>
+                <WatchTrailerBtn />
               </Link>
             </div>
           </SwiperSlide>
