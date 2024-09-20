@@ -1,10 +1,17 @@
+import { useEffect } from "react";
+import moment from "moment";
+import { useDispatch, useSelector } from "react-redux";
 import { imageUrl } from "../../utils/imageUrl";
 import { getYear } from "../../utils/getYear";
-import { PiPlayFill } from "react-icons/pi";
-import moment from "moment";
+import defaultPoster from "../../assets/No_Image_Available.png";
+import {
+  closeMovieTrailer,
+  openMovieTrailer,
+} from "../../features/modal/modalSlice";
 
 // components
 import Rating from "../../components/rating/Rating";
+import WatchTrailerBtn from "../watchTrailerBtn/WatchTrailerBtn";
 
 // styles
 import "./DetailsHeader.scss";
@@ -23,6 +30,9 @@ const DetailsHeader = ({
   keywords,
   credits,
 }) => {
+  const { isMovieTrailerOpen } = useSelector((store) => store.modal);
+  const dispatch = useDispatch();
+
   const movieRuntime = (runtime) => {
     const duration = moment.duration(runtime, "minutes");
     const formattedDuration =
@@ -33,16 +43,20 @@ const DetailsHeader = ({
     return formattedDuration;
   };
 
-  const getMovieGenres = genres
-    ?.map((genre) => {
-      return genre.name;
-    })
-    .join(" / ");
+  const getMovieGenres = genres?.map((genre) => genre.name).join(" / ");
 
   const getCastsList = credits.cast
     ?.map((cast) => cast.name)
     .slice(0, 4)
     .join(", ");
+
+  const handleTrailer = () => {
+    dispatch(openMovieTrailer());
+  };
+
+  useEffect(() => {
+    dispatch(closeMovieTrailer());
+  }, []);
 
   const styles = {
     backgroundImage: `url(${imageUrl}${backdrop})`,
@@ -50,13 +64,14 @@ const DetailsHeader = ({
     backgroundPosition: "left calc((50vw - 17rem) - 34rem) top",
     backgroundRepeat: "no-repeat",
   };
+
   return (
     <header className="detail__header" style={styles}>
       <div className="detail__wrapper">
         <div className="detail__content container">
           <div className="detail__img-box">
             <img
-              src={`${imageUrl}${poster}`}
+              src={poster ? `${imageUrl}${poster}` : defaultPoster}
               alt={title}
               className="detail__img"
             />
@@ -72,10 +87,9 @@ const DetailsHeader = ({
               <div className="detail__genres">{getMovieGenres}</div>
               <div className="detail__overview">{overview}</div>
             </div>
-            <button className="btn btn--round detail__btn">
-              <PiPlayFill className="swiper__icon" />
-              Watch Trailer
-            </button>
+            <div className="detail__btn-box">
+              <WatchTrailerBtn handleTrailer={handleTrailer} />
+            </div>
             <ul className="detail__lists">
               <li className="detail__title">
                 {director ? "Director:" : "Creator:"}
@@ -99,6 +113,26 @@ const DetailsHeader = ({
           </div>
         </div>
       </div>
+
+      {isMovieTrailerOpen && (
+        <div className="trailer">
+          <div className="trailer__content">
+            {/* close icon */}
+            {/* trailer video */}
+            {/* testing */}
+            <h1
+              style={{
+                color: "blue",
+                fontSize: "20px",
+                border: " 2px solid yellow",
+              }}
+            >
+              Trailer
+            </h1>
+            {/* testing */}
+          </div>
+        </div>
+      )}
     </header>
   );
 };
