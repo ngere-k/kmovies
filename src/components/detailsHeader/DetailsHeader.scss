@@ -56,7 +56,8 @@
     line-height: $line-height-1;
   }
 
-  &__btn {
+  &__btn-box {
+    display: inline-block;
     margin-bottom: 3.2rem;
   }
 
@@ -83,5 +84,19 @@
     border-radius: 200px;
     background-color: $color-grey-dark-2;
     padding: 0.4rem 1.2rem;
+  }
+}
+
+// Trailer
+.trailer {
+  @include modal-abs-bg;
+  @include flex-obj-ctr;
+
+  &__content {
+    // testing
+    min-width: 1200px;
+    background-color: white;
+    height: 800px;
+    // testing
   }
 }
