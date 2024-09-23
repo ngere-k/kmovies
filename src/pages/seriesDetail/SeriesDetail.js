@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   fetchCredits,
   fetchKeywords,
+  fetchVideos,
 } from "../../features/details/detailsSlice";
 
 // components
@@ -62,6 +63,7 @@ const SeriesDetail = () => {
     fetchSeries();
     dispatch(fetchCredits({ type: "tv", id }));
     dispatch(fetchKeywords({ type: "tv", id }));
+    dispatch(fetchVideos({ type: "tv", id }));
   }, []);
 
   if (isLoading) return <Loading />;
