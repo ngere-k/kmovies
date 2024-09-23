@@ -4,6 +4,8 @@ import customAxios from "../../utils/axios";
 const initialState = {
   credits: [],
   keywords: [],
+  videos: [],
+  isVideosLoading: false,
 };
 
 export const fetchCredits = createAsyncThunk(
@@ -33,6 +35,19 @@ export const fetchKeywords = createAsyncThunk(
   }
 );
 
+export const fetchVideos = createAsyncThunk(
+  "details/fetchVideos",
+  async ({ type, id }, { rejectWithValue }) => {
+    try {
+      const res = await customAxios.get(`/${type}/${id}/videos`);
+      return res.data.results;
+    } catch (error) {
+      console.log(error);
+      //   return rejectWithValue(error.message);
+    }
+  }
+);
+
 const detailsSlice = createSlice({
   name: "details",
   initialState,
@@ -41,16 +56,16 @@ const detailsSlice = createSlice({
       .addCase(fetchCredits.fulfilled, (state, { payload }) => {
         state.credits = payload;
       })
-      //   .addCase(fetchCredits.rejected, (state, { payload }) => {
-      //     state.error = payload;
-      //   })
-
       .addCase(fetchKeywords.fulfilled, (state, { payload }) => {
         state.keywords = payload;
+      })
+      .addCase(fetchVideos.pending, (state) => {
+        state.isVideosLoading = true;
+      })
+      .addCase(fetchVideos.fulfilled, (state, { payload }) => {
+        state.isVideosLoading = false;
+        state.videos = payload;
       });
-    //   .addCase(fetchKeywords.rejected, (state, { payload }) => {
-    //     state.error = payload;
-    //   });
   },
 });
 
