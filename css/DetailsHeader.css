@@ -89,7 +89,9 @@
   align-items: center;
 }
 .trailer__content {
-  min-width: 1200px;
-  background-color: white;
-  height: 800px;
+  width: 70vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }/*# sourceMappingURL=DetailsHeader.css.map */
