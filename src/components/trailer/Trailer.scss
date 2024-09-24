@@ -1,0 +1,9 @@
+@import "../../sass/abstracts/mixins";
+
+.youtube-container {
+  flex-grow: 1;
+}
+
+.youtube-iframe {
+  @include fit-img;
+}
