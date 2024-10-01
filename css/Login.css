@@ -50,12 +50,9 @@
 .form__btn {
   border: none;
   cursor: pointer;
+  color: #555;
   background-color: transparent;
   position: absolute;
   top: 0.8rem;
   right: 0.8rem;
-}
-.form__close {
-  font-size: 3rem;
-  color: #555;
 }/*# sourceMappingURL=Login.css.map */

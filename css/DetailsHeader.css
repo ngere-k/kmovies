@@ -93,5 +93,13 @@
   height: 80vh;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 0.4rem;
+}
+.trailer__btn {
+  display: inline;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  align-self: flex-end;
+  background-color: transparent;
 }/*# sourceMappingURL=DetailsHeader.css.map */
