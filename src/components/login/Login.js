@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import InputRow from "../inputRow/InputRow";
-import { CgClose } from "react-icons/cg";
 import { registerUser, signInUser } from "../../features/user/userSlice";
 import { closeLoginModal } from "../../features/modal/modalSlice";
+import CloseBtn from "../closeBtn/CloseBtn";
 
 // styles
 import "./Login.scss";
@@ -42,6 +42,8 @@ const Login = () => {
     setState({ ...initialState, isAlreadyMember: false });
     dispatch(closeLoginModal());
   };
+
+  const handleClose = () => dispatch(closeLoginModal());
 
   const toggleMember = () => {
     setState({ ...state, isAlreadyMember: !state.isAlreadyMember });
@@ -97,12 +99,8 @@ const Login = () => {
           </button>
         </p>
 
-        <button
-          type="button"
-          className="form__btn"
-          onClick={() => dispatch(closeLoginModal())}
-        >
-          <CgClose className="form__close" />
+        <button type="button" className="form__btn">
+          <CloseBtn handleClose={handleClose} />
         </button>
       </form>
     </article>
