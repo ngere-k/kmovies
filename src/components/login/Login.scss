@@ -53,15 +53,11 @@
   &__btn {
     border: none;
     cursor: pointer;
+    color: $color-grey-dark-2;
     background-color: transparent;
 
     position: absolute;
     top: 0.8rem;
     right: 0.8rem;
-  }
-
-  &__close {
-    font-size: 3rem;
-    color: $color-grey-dark-2;
   }
 }
