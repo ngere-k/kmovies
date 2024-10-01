@@ -95,7 +95,15 @@
   &__content {
     width: 70vw;
     height: 80vh;
+    @include flex-column(0.4rem);
+  }
 
-    @include flex-column(0);
+  &__btn {
+    display: inline;
+    color: $color-white;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
+    background-color: transparent;
   }
 }
