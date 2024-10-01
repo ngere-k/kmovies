@@ -8,12 +8,12 @@ import {
   closeMovieTrailer,
   openMovieTrailer,
 } from "../../features/modal/modalSlice";
-import { CgClose } from "react-icons/cg";
 
 // components
 import Rating from "../../components/rating/Rating";
 import WatchTrailerBtn from "../watchTrailerBtn/WatchTrailerBtn";
 import Trailer from "../trailer/Trailer";
+import CloseBtn from "../closeBtn/CloseBtn";
 
 // styles
 import "./DetailsHeader.scss";
@@ -33,7 +33,7 @@ const DetailsHeader = ({
   credits,
 }) => {
   const { isMovieTrailerOpen } = useSelector((store) => store.modal);
-  const { videos, isVideosLoading } = useSelector((store) => store.details);
+  const { videos } = useSelector((store) => store.details);
   const dispatch = useDispatch();
 
   const movieRuntime = (runtime) => {
@@ -58,6 +58,8 @@ const DetailsHeader = ({
   const handleTrailerModal = () => {
     dispatch(openMovieTrailer());
   };
+
+  const handleCloseTrailer = () => dispatch(closeMovieTrailer());
 
   useEffect(() => {
     dispatch(closeMovieTrailer());
@@ -106,7 +108,7 @@ const DetailsHeader = ({
                 <li className="detail__title">Keywords:</li>
               )}
               <li className="detail__keywords">
-                {keywords?.slice(0, 20).map((keyword) => {
+                {keywords?.slice(0, 12).map((keyword) => {
                   return (
                     <span key={keyword.id} className="detail__keyword">
                       {keyword.name}
@@ -121,17 +123,12 @@ const DetailsHeader = ({
 
       {isMovieTrailerOpen && (
         <div className="trailer">
-          {!isVideosLoading && (
-            <div className="trailer__content">
-              <CgClose
-                // form__close appears in two places
-                className="form__close trailer__close-icon"
-                onClick={() => dispatch(closeMovieTrailer())}
-              />
-
-              <Trailer trailerKey={trailer.key} />
-            </div>
-          )}
+          <div className="trailer__content">
+            <button className="trailer__btn">
+              <CloseBtn handleClose={handleCloseTrailer} />
+            </button>
+            <Trailer trailerKey={trailer.key} />
+          </div>
         </div>
       )}
     </header>
