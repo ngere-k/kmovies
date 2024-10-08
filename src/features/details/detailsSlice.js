@@ -5,7 +5,7 @@ const initialState = {
   credits: [],
   keywords: [],
   videos: [],
-  isVideosLoading: false,
+  recommendations: [],
 };
 
 export const fetchCredits = createAsyncThunk(
@@ -48,6 +48,19 @@ export const fetchVideos = createAsyncThunk(
   }
 );
 
+export const fetchRecommendations = createAsyncThunk(
+  "details/fetchRecommendations",
+  async ({ type, id }, { rejectWithValue }) => {
+    try {
+      const res = await customAxios.get(`/${type}/${id}/recommendations`);
+      return res.data.results;
+    } catch (error) {
+      console.log(error);
+      //   return rejectWithValue(error.message);
+    }
+  }
+);
+
 const detailsSlice = createSlice({
   name: "details",
   initialState,
@@ -59,12 +72,11 @@ const detailsSlice = createSlice({
       .addCase(fetchKeywords.fulfilled, (state, { payload }) => {
         state.keywords = payload;
       })
-      .addCase(fetchVideos.pending, (state) => {
-        state.isVideosLoading = true;
-      })
       .addCase(fetchVideos.fulfilled, (state, { payload }) => {
-        state.isVideosLoading = false;
         state.videos = payload;
+      })
+      .addCase(fetchRecommendations.fulfilled, (state, { payload }) => {
+        state.recommendations = payload;
       });
   },
 });
