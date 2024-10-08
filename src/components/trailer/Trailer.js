@@ -14,6 +14,10 @@ const Trailer = ({ trailerKey }) => {
     event.target.pauseVideo();
   };
 
+  if (!trailerKey) {
+    return <div className="no-trailer-text">Trailer not available</div>;
+  }
+
   return (
     <YouTube
       videoId={trailerKey}
