@@ -1,4 +1,14 @@
+@import "../../sass/abstracts/variable";
 @import "../../sass/abstracts/mixins";
+
+.no-trailer-text {
+  height: 100%;
+  font-size: 2rem;
+  @include flex-obj-ctr;
+  border-radius: $border-radius-sm;
+  color: $color-grey-dark-1;
+  background-color: #f0f0f0;
+}
 
 .youtube-container {
   flex-grow: 1;
