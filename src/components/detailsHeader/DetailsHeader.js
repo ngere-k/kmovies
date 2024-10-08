@@ -40,7 +40,7 @@ const DetailsHeader = ({
     const duration = moment.duration(runtime, "minutes");
     const formattedDuration =
       runtime < 60
-        ? `${runtime} min`
+        ? `${runtime} ${runtime.length < 1 ? "0min" : "min"}`
         : `${duration.hours()}h ${duration.minutes()}min`;
 
     return formattedDuration;
@@ -127,7 +127,7 @@ const DetailsHeader = ({
             <button className="trailer__btn">
               <CloseBtn handleClose={handleCloseTrailer} />
             </button>
-            <Trailer trailerKey={trailer.key} />
+            <Trailer trailerKey={trailer?.key} />
           </div>
         </div>
       )}
