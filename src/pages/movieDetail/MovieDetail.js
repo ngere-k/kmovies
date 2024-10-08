@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   fetchCredits,
   fetchKeywords,
+  fetchRecommendations,
   fetchVideos,
 } from "../../features/details/detailsSlice";
 
@@ -19,7 +20,9 @@ const MovieDetail = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const { credits, keywords } = useSelector((store) => store.details);
+  const { credits, keywords, recommendations } = useSelector(
+    (store) => store.details
+  );
   const dispatch = useDispatch();
 
   const findDirectorObj = credits.crew?.find((item) => item.job === "Director");
@@ -65,6 +68,7 @@ const MovieDetail = () => {
     dispatch(fetchCredits({ type: "movie", id }));
     dispatch(fetchKeywords({ type: "movie", id }));
     dispatch(fetchVideos({ type: "movie", id }));
+    dispatch(fetchRecommendations({ type: "movie", id }));
   }, []);
 
   if (isLoading) return <Loading />;
