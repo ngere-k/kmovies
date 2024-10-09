@@ -5,6 +5,8 @@ const initialState = {
   credits: [],
   keywords: [],
   videos: [],
+  reviews: [],
+  images: [],
   recommendations: [],
 };
 
@@ -48,6 +50,32 @@ export const fetchVideos = createAsyncThunk(
   }
 );
 
+export const fetchReviews = createAsyncThunk(
+  "details/fetchReviews",
+  async ({ type, id }, { rejectWithValue }) => {
+    try {
+      const res = await customAxios.get(`/${type}/${id}/reviews`);
+      return res.data.results;
+    } catch (error) {
+      console.log(error);
+      //   return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const fetchImages = createAsyncThunk(
+  "details/fetchImages",
+  async ({ type, id }, { rejectWithValue }) => {
+    try {
+      const res = await customAxios.get(`/${type}/${id}/images`);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+      //   return rejectWithValue(error.message);
+    }
+  }
+);
+
 export const fetchRecommendations = createAsyncThunk(
   "details/fetchRecommendations",
   async ({ type, id }, { rejectWithValue }) => {
@@ -74,6 +102,12 @@ const detailsSlice = createSlice({
       })
       .addCase(fetchVideos.fulfilled, (state, { payload }) => {
         state.videos = payload;
+      })
+      .addCase(fetchReviews.fulfilled, (state, { payload }) => {
+        state.reviews = payload;
+      })
+      .addCase(fetchImages.fulfilled, (state, { payload }) => {
+        state.images = payload;
       })
       .addCase(fetchRecommendations.fulfilled, (state, { payload }) => {
         state.recommendations = payload;
