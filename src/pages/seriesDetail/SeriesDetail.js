@@ -4,13 +4,17 @@ import customAxios from "../../utils/axios";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchCredits,
+  fetchImages,
   fetchKeywords,
+  fetchRecommendations,
+  fetchReviews,
   fetchVideos,
 } from "../../features/details/detailsSlice";
 
 // components
 import Loading from "../../components/loading/Loading";
 import DetailsHeader from "../../components/detailsHeader/DetailsHeader";
+import Recommendations from "../../components/recommendations/Recommendations";
 
 // styles
 import "./SeriesDetail.scss";
@@ -19,7 +23,9 @@ const SeriesDetail = () => {
   const { id } = useParams();
   const [series, setSeries] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const { credits, keywords } = useSelector((store) => store.details);
+  const { credits, keywords, recommendations, reviews, images } = useSelector(
+    (store) => store.details
+  );
   const dispatch = useDispatch();
 
   const {
@@ -64,19 +70,18 @@ const SeriesDetail = () => {
     dispatch(fetchCredits({ type: "tv", id }));
     dispatch(fetchKeywords({ type: "tv", id }));
     dispatch(fetchVideos({ type: "tv", id }));
-  }, []);
+    dispatch(fetchRecommendations({ type: "tv", id }));
+    dispatch(fetchReviews({ type: "tv", id }));
+    dispatch(fetchImages({ type: "tv", id }));
+  }, [id]);
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <Loading fullPageLoading />;
 
   return (
     <article className="series-detail-article">
       <DetailsHeader {...seriesDetailObj} />
-
-      {/* div for cast */}
-      <div>
-        <h2>Series Details</h2>
-      </div>
-      {/* div for cast */}
+      {/* casts here */}
+      <Recommendations recommendations={recommendations} />
     </article>
   );
 };
