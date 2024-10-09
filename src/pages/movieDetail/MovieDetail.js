@@ -4,14 +4,17 @@ import customAxios from "../../utils/axios";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchCredits,
+  fetchImages,
   fetchKeywords,
   fetchRecommendations,
+  fetchReviews,
   fetchVideos,
 } from "../../features/details/detailsSlice";
 
 // components
 import Loading from "../../components/loading/Loading";
 import DetailsHeader from "../../components/detailsHeader/DetailsHeader";
+import Recommendations from "../../components/recommendations/Recommendations";
 
 // styles
 import "./MovieDetail.scss";
@@ -20,7 +23,7 @@ const MovieDetail = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const { credits, keywords, recommendations } = useSelector(
+  const { credits, keywords, recommendations, reviews, images } = useSelector(
     (store) => store.details
   );
   const dispatch = useDispatch();
@@ -69,19 +72,17 @@ const MovieDetail = () => {
     dispatch(fetchKeywords({ type: "movie", id }));
     dispatch(fetchVideos({ type: "movie", id }));
     dispatch(fetchRecommendations({ type: "movie", id }));
-  }, []);
+    dispatch(fetchReviews({ type: "movie", id }));
+    dispatch(fetchImages({ type: "movie", id }));
+  }, [id]);
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <Loading fullPageLoading />;
 
   return (
     <article className="movie-detail-article">
       <DetailsHeader {...movieDetailsObj} />
-
-      {/* div for cast */}
-      <div>
-        <h2>Movie Detail</h2>
-      </div>
-      {/* div for cast */}
+      {/* casts here */}
+      <Recommendations recommendations={recommendations} />
     </article>
   );
 };
