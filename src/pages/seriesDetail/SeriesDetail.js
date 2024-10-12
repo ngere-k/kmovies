@@ -15,6 +15,7 @@ import {
 import Loading from "../../components/loading/Loading";
 import DetailsHeader from "../../components/detailsHeader/DetailsHeader";
 import Recommendations from "../../components/recommendations/Recommendations";
+import Discover from "../../components/discover/Discover";
 
 // styles
 import "./SeriesDetail.scss";
@@ -80,7 +81,7 @@ const SeriesDetail = () => {
   return (
     <article className="series-detail-article">
       <DetailsHeader {...seriesDetailObj} />
-      {/* casts here */}
+      <Discover credits={credits} reviews={reviews} images={images} />
       <Recommendations recommendations={recommendations} />
     </article>
   );
