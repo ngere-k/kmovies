@@ -50,8 +50,8 @@ function App() {
             <Route path="series" element={<Series />} />
             <Route path="contact" element={<Contact />} />
             <Route path="search" element={<Search />} />
-            <Route path="movie/:id" element={<MovieDetail />} />
-            <Route path="series-info/:id" element={<SeriesDetail />} />
+            <Route path="movie/:id/*" element={<MovieDetail />} />
+            <Route path="series-info/:id/*" element={<SeriesDetail />} />
             <Route path="*" element={<Error />} />
           </Routes>
           <Footer />
