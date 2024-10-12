@@ -15,6 +15,7 @@ import {
 import Loading from "../../components/loading/Loading";
 import DetailsHeader from "../../components/detailsHeader/DetailsHeader";
 import Recommendations from "../../components/recommendations/Recommendations";
+import Discover from "../../components/discover/Discover";
 
 // styles
 import "./MovieDetail.scss";
@@ -28,7 +29,9 @@ const MovieDetail = () => {
   );
   const dispatch = useDispatch();
 
-  const findDirectorObj = credits.crew?.find((item) => item.job === "Director");
+  const findDirectorObj = credits?.crew?.find(
+    (item) => item.job === "Director"
+  );
 
   const {
     backdrop_path,
@@ -81,7 +84,7 @@ const MovieDetail = () => {
   return (
     <article className="movie-detail-article">
       <DetailsHeader {...movieDetailsObj} />
-      {/* casts here */}
+      <Discover credits={credits} reviews={reviews} images={images} />
       <Recommendations recommendations={recommendations} />
     </article>
   );
