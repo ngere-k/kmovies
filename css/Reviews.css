@@ -1,0 +1,55 @@
+.review-article {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.review {
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.review__header {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  -moz-column-gap: 1.2rem;
+       column-gap: 1.2rem;
+  row-gap: 0.4rem;
+}
+.review__figure {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  grid-row: span 2;
+}
+.review__avatar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.review__name {
+  align-self: end;
+}
+.review__rating {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #333;
+  justify-self: end;
+  grid-row: span 2;
+}
+.review__created {
+  font-size: 1.2rem;
+  align-self: start;
+  color: #aaa;
+}
+.review__text {
+  font-weight: 500;
+  line-height: 1.6;
+  border: 1px solid #ccc;
+  padding: 2.4rem;
+}/*# sourceMappingURL=Reviews.css.map */

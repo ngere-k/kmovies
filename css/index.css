@@ -41,6 +41,12 @@ body {
   color: #333;
 }
 
+.heading-quaternary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #333;
+}
+
 .btn {
   display: flex;
   align-items: center;
