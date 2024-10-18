@@ -1,0 +1,44 @@
+@import "../../sass/abstracts/variable";
+@import "../../sass/abstracts/mixins";
+
+.section-discover {
+  padding: $section-padding-1;
+}
+
+.discover {
+  width: 80%;
+
+  &__nav {
+    width: inherit;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 3.2rem;
+  }
+
+  &__lists {
+    list-style: none;
+    @include flex-center(3.2rem);
+  }
+
+  &__link:link,
+  &__link:visited {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $color-grey-dark-1;
+    text-decoration: none;
+    transition: $transition;
+  }
+
+  &__link:hover,
+  &__link:active {
+    color: $color-primary;
+  }
+
+  .active {
+    color: $color-primary;
+  }
+
+  &__content {
+    width: inherit;
+  }
+}
