@@ -1,0 +1,57 @@
+@import "../../sass/abstracts/mixins";
+@import "../../sass/abstracts/variable";
+
+.review-article {
+  @include flex-column(3.2rem);
+}
+
+.review {
+  font-size: 1.6rem;
+  @include flex-column(1.6rem);
+
+  &__header {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    align-items: center;
+    column-gap: 1.2rem;
+    row-gap: 0.4rem;
+  }
+
+  &__figure {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    grid-row: span 2;
+  }
+
+  &__avatar {
+    @include fit-img;
+  }
+
+  &__name {
+    align-self: end;
+  }
+
+  &__rating {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $color-grey-dark-1;
+
+    justify-self: end;
+    grid-row: span 2;
+  }
+
+  &__created {
+    font-size: 1.2rem;
+    align-self: start;
+    color: #aaa;
+  }
+
+  &__text {
+    font-weight: 500;
+    line-height: $line-height-1;
+    border: 1px solid#ccc;
+    padding: 2.4rem;
+  }
+}
