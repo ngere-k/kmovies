@@ -3,3 +3,9 @@
 .section-recommendations {
   padding: $section-padding-1;
 }
+
+.recommendations {
+  &__header {
+    text-transform: none;
+  }
+}
