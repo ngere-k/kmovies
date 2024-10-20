@@ -8,7 +8,9 @@ const Recommendations = ({ recommendations }) => {
     <section className="section-recommendations">
       <div className="container">
         {recommendations.length > 0 && (
-          <h2 className="heading-secondary">you may also like...</h2>
+          <h2 className="heading-secondary recommendations__header">
+            You may also like...
+          </h2>
         )}
         <div className="grid-col-4">
           {recommendations.slice(0, 12).map((movie) => {
