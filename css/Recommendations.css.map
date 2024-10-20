@@ -1,1 +1,1 @@
-{"version":3,"sources":["../src/components/recommendations/Recommendations.scss","../src/sass/abstracts/_variable.scss","Recommendations.css"],"names":[],"mappings":"AAEA;EACE,iBCgBkB;ACjBpB","file":"Recommendations.css"}
+{"version":3,"sources":["../src/components/recommendations/Recommendations.scss","../src/sass/abstracts/_variable.scss","Recommendations.css"],"names":[],"mappings":"AAEA;EACE,iBCgBkB;ACjBpB;;AFKE;EACE,oBAAA;AEFJ","file":"Recommendations.css"}
