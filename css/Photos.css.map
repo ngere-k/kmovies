@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"Photos.css"}
+{"version":3,"sources":["../src/components/photos/Photos.scss","Photos.css","../src/sass/abstracts/_variable.scss","../src/sass/abstracts/_mixins.scss"],"names":[],"mappings":"AAGA;EACE,aAAA;EACA,qCAAA;EACA,mBAAA;EACA,WAAA;ACFF;;ADME;EACE,WAAA;EACA,gBAAA;EACA,kBEGe;ADNnB;ADME;EGEA,cAAA;EACA,WAAA;EACA,YAAA;EACA,oBAAA;KAAA,iBAAA;AFLF","file":"Photos.css"}

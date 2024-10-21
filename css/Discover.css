@@ -2,9 +2,6 @@
   padding: 6.4rem 0;
 }
 
-.discover {
-  width: 80%;
-}
 .discover__nav {
   width: inherit;
   padding-bottom: 1.6rem;
@@ -29,7 +26,4 @@
 }
 .discover .active {
   color: #dc2626;
-}
-.discover__content {
-  width: inherit;
 }/*# sourceMappingURL=Discover.css.map */
