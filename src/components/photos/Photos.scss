@@ -1,0 +1,21 @@
+@import "../../sass/abstracts/mixins";
+@import "../../sass/abstracts/variable";
+
+.image-article {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.backdrop {
+  &__figure {
+    width: 100%;
+    overflow: hidden;
+    border-radius: $border-radius-sm;
+  }
+
+  &__image {
+    @include fit-img;
+  }
+}
