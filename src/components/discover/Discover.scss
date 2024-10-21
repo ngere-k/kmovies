@@ -6,8 +6,6 @@
 }
 
 .discover {
-  width: 80%;
-
   &__nav {
     width: inherit;
     padding-bottom: 1.6rem;
@@ -36,9 +34,5 @@
 
   .active {
     color: $color-primary;
-  }
-
-  &__content {
-    width: inherit;
   }
 }
