@@ -60,14 +60,17 @@
   align-items: center;
   gap: 2.4rem;
 }
-.nav__link {
+.nav__link:link, .nav__link:visited {
   text-decoration: none;
   font-size: 1.8rem;
   font-weight: 500;
   color: #fff;
+  transition: all 0.3s;
 }
-
-.active {
+.nav__link:hover, .nav__link:active {
+  color: #dc2626;
+}
+.nav .active {
   color: #dc2626;
 }
 
