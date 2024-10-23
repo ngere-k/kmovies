@@ -8,6 +8,7 @@
 .review {
   font-size: 1.6rem;
   @include flex-column(1.6rem);
+  width: 70%;
 
   &__header {
     display: grid;
