@@ -5,7 +5,14 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Scroll window to Top
+    // Exclude nested routes in "/movie/" and "/series-info/"
+    if (
+      !pathname.startsWith("/movie/") &&
+      !pathname.startsWith("/series-info/")
+    ) {
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
 
   return null;
