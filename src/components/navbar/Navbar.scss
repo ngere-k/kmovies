@@ -61,16 +61,23 @@
     @include flex-center(2.4rem);
   }
 
-  &__link {
+  &__link:link,
+  &__link:visited {
     text-decoration: none;
     font-size: 1.8rem;
     font-weight: 500;
     color: $color-white;
+    transition: $transition;
   }
-}
 
-.active {
-  color: $color-primary;
+  &__link:hover,
+  &__link:active {
+    color: $color-primary;
+  }
+
+  .active {
+    color: $color-primary;
+  }
 }
 
 .user {
