@@ -1,4 +1,4 @@
-import { Routes, Route, NavLink } from "react-router-dom";
+import { Routes, Route, NavLink, useLocation } from "react-router-dom";
 
 // components
 import Casts from "../casts/Casts";
@@ -8,7 +8,9 @@ import Photos from "../photos/Photos";
 // styles
 import "./Discover.scss";
 
-const Discover = ({ credits, reviews, images }) => {
+const Discover = ({ credits, reviews, images, id }) => {
+  const location = useLocation();
+
   return (
     <section className="section-discover">
       <div className="discover container">
@@ -18,8 +20,11 @@ const Discover = ({ credits, reviews, images }) => {
             <li className="discover__list">
               <NavLink
                 to="reviews"
+                // Keeps the link active when component first loads
                 className={({ isActive }) =>
-                  isActive ? "discover__link active" : "discover__link"
+                  isActive || location.pathname === `/movie/${id}`
+                    ? "discover__link active"
+                    : "discover__link"
                 }
               >
                 Reviews
@@ -50,7 +55,7 @@ const Discover = ({ credits, reviews, images }) => {
 
         <div className="discover__content">
           <Routes>
-            <Route index path="/" element={<Reviews reviews={reviews} />} />
+            <Route index element={<Reviews reviews={reviews} />} />
             <Route path="reviews" element={<Reviews reviews={reviews} />} />
             <Route path="casts" element={<Casts credits={credits} />} />
             <Route path="photos" element={<Photos images={images} />} />
