@@ -81,7 +81,7 @@ const SeriesDetail = () => {
   return (
     <article className="series-detail-article">
       <DetailsHeader {...seriesDetailObj} />
-      <Discover credits={credits} reviews={reviews} images={images} />
+      <Discover credits={credits} reviews={reviews} images={images} id={id} />
       <Recommendations recommendations={recommendations} />
     </article>
   );
