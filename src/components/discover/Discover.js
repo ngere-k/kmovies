@@ -8,7 +8,7 @@ import Photos from "../photos/Photos";
 // styles
 import "./Discover.scss";
 
-const Discover = ({ credits, reviews, images, id }) => {
+const Discover = ({ credits, reviews, images, id, pathname }) => {
   const location = useLocation();
 
   return (
@@ -22,7 +22,7 @@ const Discover = ({ credits, reviews, images, id }) => {
                 to="reviews"
                 // Keeps the link active when component first loads
                 className={({ isActive }) =>
-                  isActive || location.pathname === `/movie/${id}`
+                  isActive || location.pathname === `/${pathname}/${id}`
                     ? "discover__link active"
                     : "discover__link"
                 }
