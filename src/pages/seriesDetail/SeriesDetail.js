@@ -81,7 +81,13 @@ const SeriesDetail = () => {
   return (
     <article className="series-detail-article">
       <DetailsHeader {...seriesDetailObj} />
-      <Discover credits={credits} reviews={reviews} images={images} id={id} />
+      <Discover
+        credits={credits}
+        reviews={reviews}
+        images={images}
+        id={id}
+        pathname="series-info"
+      />
       <Recommendations recommendations={recommendations} />
     </article>
   );
