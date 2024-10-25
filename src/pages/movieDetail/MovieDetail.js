@@ -84,7 +84,13 @@ const MovieDetail = () => {
   return (
     <article className="movie-detail-article">
       <DetailsHeader {...movieDetailsObj} />
-      <Discover credits={credits} reviews={reviews} images={images} id={id} />
+      <Discover
+        credits={credits}
+        reviews={reviews}
+        images={images}
+        id={id}
+        pathname="movie"
+      />
       <Recommendations recommendations={recommendations} />
     </article>
   );
