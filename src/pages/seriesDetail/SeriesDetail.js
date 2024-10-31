@@ -16,6 +16,7 @@ import Loading from "../../components/loading/Loading";
 import DetailsHeader from "../../components/detailsHeader/DetailsHeader";
 import Recommendations from "../../components/recommendations/Recommendations";
 import Discover from "../../components/discover/Discover";
+import Seasons from "../../components/seasons/Seasons";
 
 // styles
 import "./SeriesDetail.scss";
@@ -39,6 +40,7 @@ const SeriesDetail = () => {
     genres,
     overview,
     created_by,
+    seasons,
   } = series;
 
   const seriesDetailObj = {
@@ -88,6 +90,7 @@ const SeriesDetail = () => {
         id={id}
         pathname="series-info"
       />
+      <Seasons seasons={seasons} />
       <Recommendations recommendations={recommendations} />
     </article>
   );
