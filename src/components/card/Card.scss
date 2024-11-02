@@ -14,6 +14,12 @@
     padding-top: 1.6rem;
   }
 
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   &__text-link {
     &:link,
     &:visited {
@@ -24,5 +30,10 @@
     &:active {
       text-decoration: underline;
     }
+  }
+
+  &__episode {
+    font-size: 1.2rem;
+    font-weight: 500;
   }
 }
