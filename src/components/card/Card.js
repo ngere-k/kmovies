@@ -14,6 +14,8 @@ const Card = ({
   release_date,
   name,
   first_air_date,
+  air_date,
+  episode_count,
   path,
 }) => {
   const truncatedTitle =
@@ -23,7 +25,7 @@ const Card = ({
 
   return (
     <div className="card">
-      <Link to={`${path}/${id}`} className="card__link">
+      <Link to={episode_count ? "" : `${path}/${id}`} className="card__link">
         <img
           src={poster_path ? `${imageUrl}${poster_path}` : defaultPoster}
           className="card__img"
@@ -32,12 +34,20 @@ const Card = ({
       </Link>
 
       <div className="card__content">
-        <Link to={`${path}/${id}`} className="heading-tertiary card__text-link">
-          {truncatedTitle || truncatedName}
-        </Link>
+        <div className="card__heading">
+          <Link
+            to={episode_count ? "" : `${path}/${id}`}
+            className="heading-tertiary card__text-link"
+          >
+            {truncatedTitle || truncatedName}
+          </Link>
+          {episode_count && (
+            <p className="card__episode">{`${episode_count} Episode`}</p>
+          )}
+        </div>
         <RatingYear
           rating={vote_average}
-          date={release_date || first_air_date}
+          date={release_date || first_air_date || air_date}
           small
         />
       </div>
