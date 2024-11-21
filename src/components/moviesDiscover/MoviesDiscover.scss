@@ -1,0 +1,12 @@
+@import "../../sass/abstracts/mixins";
+
+.article-discover {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 2.4rem;
+}
+
+.discover-main {
+  @include flex-column(1.2rem);
+}
