@@ -1,6 +1,14 @@
+.grid-col-3,
 .grid-col-4 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   column-gap: 2.4rem;
   row-gap: 3.2rem;
+}
+
+.grid-col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-col-4 {
+  grid-template-columns: repeat(4, 1fr);
 }
