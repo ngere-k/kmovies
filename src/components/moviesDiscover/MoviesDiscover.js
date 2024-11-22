@@ -7,14 +7,20 @@ import Pagination from "../../components/pagination/Pagination";
 // styles
 import "./MoviesDiscover.scss";
 
-const MoviesDiscover = () => {
+const MoviesDiscover = ({ movies, path, page, pageCount, handlePageClick }) => {
   return (
     <article className="container article-discover">
       <Filters />
       <div className="discover-main">
         <Sort />
-        <MoviesList />
-        <h2>Pagination</h2>
+        <MoviesList movies={movies} path={path} />
+        <div className="discover-pagination">
+          <Pagination
+            page={page}
+            pageCount={pageCount}
+            handlePageClick={handlePageClick}
+          />
+        </div>
       </div>
     </article>
   );
