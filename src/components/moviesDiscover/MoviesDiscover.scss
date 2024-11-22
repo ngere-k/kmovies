@@ -8,5 +8,9 @@
 }
 
 .discover-main {
-  @include flex-column(1.2rem);
+  @include flex-column(3.2rem);
+}
+
+.discover-pagination {
+  align-self: center;
 }
