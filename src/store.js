@@ -4,6 +4,7 @@ import userReducer from "./features/user/userSlice";
 import modalReducer from "./features/modal/modalSlice";
 import searchReducer from "./features/search/searchSlice";
 import detailsReducer from "./features/details/detailsSlice";
+import discoverReducer from "./features/discover/discoverSlice";
 
 export const store = configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
     modal: modalReducer,
     search: searchReducer,
     details: detailsReducer,
+    discover: discoverReducer,
   },
 });
