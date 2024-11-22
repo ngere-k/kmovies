@@ -1,0 +1,16 @@
+.article-discover {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 2.4rem;
+}
+
+.discover-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.discover-pagination {
+  align-self: center;
+}/*# sourceMappingURL=MoviesDiscover.css.map */

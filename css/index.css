@@ -87,12 +87,20 @@ body {
   max-width: 120rem;
 }
 
+.grid-col-3,
 .grid-col-4 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   -moz-column-gap: 2.4rem;
        column-gap: 2.4rem;
   row-gap: 3.2rem;
+}
+
+.grid-col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-col-4 {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .section {
@@ -103,4 +111,8 @@ body {
   width: 90vw;
   margin: 0 auto;
   max-width: 120rem;
+}
+
+.mgtp-md {
+  margin-top: 5rem !important;
 }/*# sourceMappingURL=index.css.map */
